@@ -12,8 +12,8 @@ var handlebars = require('express-handlebars');
 
 keystone.init({
 
-	'name': 'keystone-restful',
-	'brand': 'keystone-restful',
+	'name': 'hotela',
+	'brand': 'hotela',
 
 	'sass': 'public',
 	'static': 'public',
