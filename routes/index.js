@@ -44,6 +44,7 @@ exports = module.exports = function(app) {
 	app.all('/contact', routes.views.contact);
 
 	restify.serve(router, keystone.mongoose.model('User'));
+	restify.serve(router, keystone.mongoose.model('Post'));
 	restify.serve(router, keystone.mongoose.model('Room'));
 
 	app.use(router);
