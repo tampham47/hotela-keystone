@@ -43,7 +43,13 @@ exports = module.exports = function(app) {
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 
-  app.all('/api/*', keystone.middleware.cors);
+  // app.all('/api/*', keystone.middleware.cors);
+  app.all('/api/*', function (req,res,next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
 
 	restify.serve(router, keystone.mongoose.model('User'));
 	restify.serve(router, keystone.mongoose.model('Post'));
