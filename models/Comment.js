@@ -11,6 +11,7 @@ var Comment = new keystone.List('Comment', {});
 Comment.add({
 	name: { type: String, required: true },
 	email: { type: String },
+	website: { type: String },
 	content: { type: Types.Textarea, required: true, initial: true },
   roomId: { type: Types.Relationship, ref: 'Room', index: true },
   createdAt: { type: Types.Datetime, default: Date.now }
