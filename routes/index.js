@@ -54,6 +54,9 @@ exports = module.exports = function(app) {
 	restify.serve(router, keystone.mongoose.model('User'));
 	restify.serve(router, keystone.mongoose.model('Post'));
 	restify.serve(router, keystone.mongoose.model('Room'));
+	restify.serve(router, keystone.mongoose.model('Booking'));
+	restify.serve(router, keystone.mongoose.model('Comment'));
+	restify.serve(router, keystone.mongoose.model('Enquiry'));
 
 	app.use(router);
 
